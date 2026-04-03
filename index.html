@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIFDM | AI Network Threat Intelligence</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="background-effects">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <nav class="navbar">
+        <div class="brand">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>AIFDM - NetGuard <span class="badge">LIVE</span></span>
+        </div>
+        <div class="controls">
+            <button id="btn-normal" class="btn btn-outline active">Normal Traffic</button>
+            <button id="btn-attack" class="btn btn-danger">Simulate DDoS/Payload Attack</button>
+        </div>
+    </nav>
+
+    <main class="dashboard">
+        <!-- Left Panel: ML Analytics & Logs -->
+        <aside class="panel left-panel">
+            <div class="card">
+                <h3><i class="fa-solid fa-brain"></i> ML Engine (Random Forest)</h3>
+                <div class="metrics">
+                    <div class="metric">
+                        <span class="label">Accuracy</span>
+                        <span class="value text-green">98.4%</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Packets Scanned</span>
+                        <span class="value" id="packets-count">0</span>
+                    </div>
+                    <div class="metric">
+                        <span class="label">Threat Level</span>
+                        <span class="value" id="threat-level">Low</span>
+                    </div>
+                </div>
+                <div class="ml-status" id="ml-status-bar">
+                    <div class="status-indicator safe"></div>
+                    <span>System Secure - Traffic Normal</span>
+                </div>
+            </div>
+
+            <div class="card fill-height">
+                <h3><i class="fa-solid fa-list-ul"></i> Live Event Log</h3>
+                <div class="event-log" id="event-log">
+                    <!-- Events append here -->
+                </div>
+            </div>
+        </aside>
+
+        <!-- Center Panel: Network Topology -->
+        <section class="network-view">
+            <div class="topology-container">
+                <canvas id="networkCanvas"></canvas>
+            </div>
+        </section>
+
+        <!-- Right Panel: DAA Algorithms & Mitigation -->
+        <aside class="panel right-panel">
+            <div class="card">
+                <h3><i class="fa-solid fa-route"></i> DAA: Dijkstra's Routing</h3>
+                <p class="description">Calculates shortest safe path avoiding compromised nodes.</p>
+                <div class="daa-visualizer">
+                    <div class="route-display">
+                        <span>Current Path:</span>
+                        <strong id="current-path">A → R1 → R2 → SERVER</strong>
+                    </div>
+                    <button class="btn btn-action" id="btn-reroute" disabled><i class="fa-solid fa-code-branch"></i> Trigger Reroute</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3><i class="fa-solid fa-magnifying-glass"></i> DAA: KMP Inspection</h3>
+                <p class="description">O(n+m) String matching to detect malicious payload signatures ("DROP TABLE", "SELECT *").</p>
+                <div class="kmp-visualizer">
+                    <div class="code-window">
+                        <div class="code-line">Signature: <span class="highlight-red">MALWARE_EXEC</span></div>
+                        <div class="code-line">Payload Stream:</div>
+                        <div class="payload-stream" id="payload-stream">0101010101001000...</div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/daa_algos.js"></script>
+    <script src="js/ml_simulator.js"></script>
+    <script src="js/graph.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
