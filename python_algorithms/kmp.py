@@ -1,6 +1,3 @@
-# This is an example script demonstrating the Knuth-Morris-Pratt (KMP) String Matching Algorithm.
-# For DAA coursework, it is used to efficiently scan network payload streams for known malware signatures.
-
 def compute_lps_array(pattern):
     m = len(pattern)
     lps = [0] * m
@@ -27,8 +24,8 @@ def kmp_search(text, pattern):
     
     lps = compute_lps_array(pattern)
     
-    i = 0  # index for text
-    j = 0  # index for pattern
+    i = 0  
+    j = 0  
     found_matches = []
 
     while (n - i) >= (m - j):
@@ -51,7 +48,6 @@ def kmp_search(text, pattern):
     return found_matches
 
 if __name__ == "__main__":
-    # Simulate a stream of hex bytes (network payload)
     clean_stream = "01A0B12F00C8D9E11F"
     malicious_stream = "01A0B12F00MALWARE00C8D9E11F"
     
