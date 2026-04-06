@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AIFDM | AI Network Threat Intelligence</title>
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
@@ -30,7 +28,6 @@
     </nav>
 
     <main class="dashboard">
-        <!-- Left Panel: ML Analytics & Logs -->
         <aside class="panel left-panel">
             <div class="card">
                 <h3><i class="fa-solid fa-brain"></i> ML Engine (Random Forest)</h3>
@@ -57,7 +54,6 @@
             <div class="card fill-height">
                 <h3><i class="fa-solid fa-list-ul"></i> Live Event Log</h3>
                 <div class="event-log" id="event-log">
-                    <!-- Events append here -->
                 </div>
             </div>
         </aside>
@@ -68,8 +64,6 @@
                 <canvas id="networkCanvas"></canvas>
             </div>
         </section>
-
-        <!-- Right Panel: DAA Algorithms & Mitigation -->
         <aside class="panel right-panel">
             <div class="card">
                 <h3><i class="fa-solid fa-route"></i> DAA: Dijkstra's Routing</h3>
@@ -82,7 +76,6 @@
                     <button class="btn btn-action" id="btn-reroute" disabled><i class="fa-solid fa-code-branch"></i> Trigger Reroute</button>
                 </div>
             </div>
-
             <div class="card">
                 <h3><i class="fa-solid fa-magnifying-glass"></i> DAA: KMP Inspection</h3>
                 <p class="description">O(n+m) String matching to detect malicious payload signatures ("DROP TABLE", "SELECT *").</p>
@@ -96,8 +89,6 @@
             </div>
         </aside>
     </main>
-
-    <!-- Scripts -->
     <script src="js/daa_algos.js"></script>
     <script src="js/ml_simulator.js"></script>
     <script src="js/graph.js"></script>
